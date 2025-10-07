@@ -5,8 +5,6 @@ from archipy.adapters.postgres.sqlalchemy.adapters import AsyncPostgresSQLAlchem
 from src.models.models.user import UserEntity
 from src.models.dtos.user.repository_interface_dto.user_repository_interface_dto import (
     CreateUserCommandDTO,
-    ValidateUserCommandDTO,
-    ValidateUserResponseDTO,
     GetUserByUsernameCommandDTO,
     GetUserByUsernameResponseDTO,
     GetUserByUsernameDTO
@@ -48,19 +46,3 @@ class UserAdapter(SQLAlchemyFilterMixin):
         return GetUserByUsernameResponseDTO(
             user=dto
         )
-
-
-
-
-    async def validate_password(self, input_dto: ValidateUserCommandDTO) -> ValidateUserResponseDTO:
-
-
-    async def validate_user(self, filters: ValidateUserCommandDTO) -> ValidateUserResponseDTO:
-        query = (
-            select(UserEntity)
-            .where(
-                UserEntity.username == filters.username
-            )
-        )
-
-

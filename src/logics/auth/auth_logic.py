@@ -10,8 +10,6 @@ from src.models.dtos.auth.domain_iterrface_dto.v1.auth_domain_iterface_dto impor
     SignupInputDTOV1,
     ValidatePasswordInputDTOV1,
     ValidatePasswordOutputDTOV1,
-    GetUserByUsernameInputDTOV1,
-    GetUserByUsernameOutputDTOV1
 )
 from src.models.dtos.auth.repository_interface_dto.auth_repository_interface_dto import (
     AuthCommandDTO,
